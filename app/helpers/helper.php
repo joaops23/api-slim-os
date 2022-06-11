@@ -1,8 +1,9 @@
 <?php
+namespace helpers;
 
 use Slim\Slim;
 
-class helpers {
+class Helpers {
     static function jsonResponse($error = true, $message = '', $data = array()) {
         $app                = Slim::getInstance();
         $response           = new stdClass();

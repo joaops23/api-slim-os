@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd8ca1f97de8829d0d86f18b9b4d0c1995ec32f79',
+        'reference' => '9846450da444358c591a3ed7c0ad3e8c4ed81005',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd8ca1f97de8829d0d86f18b9b4d0c1995ec32f79',
+            'reference' => '9846450da444358c591a3ed7c0ad3e8c4ed81005',
             'dev_requirement' => false,
         ),
         'fig/http-message-util' => array(
@@ -101,15 +101,6 @@
             'install_path' => __DIR__ . '/../psr/log',
             'aliases' => array(),
             'reference' => 'fe5ea303b0887d5caefd3d431c3e61ad47037001',
-            'dev_requirement' => false,
-        ),
-        'rain/raintpl' => array(
-            'pretty_version' => '3.1.1',
-            'version' => '3.1.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../rain/raintpl',
-            'aliases' => array(),
-            'reference' => 'edee683bf242f40cc75bee46a78759f6c1589dca',
             'dev_requirement' => false,
         ),
         'ralouphie/getallheaders' => array(

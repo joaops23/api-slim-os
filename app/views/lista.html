@@ -1,0 +1,24 @@
+{{include('index.html')}}
+<div class="col py-3">
+    <div class="container mt-5">
+        <div class="row">
+            {% for ordem in lista %}
+                <div class="card col-sm-3 card p-1 m-1">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ordem['id']}}</h5>
+                        <h6 class="card-subtitle">{{ordem['ordem']}}</h6>
+                        <p class="card-title">{{ordem['descricao']}}</p>
+
+                        <div class="m-1 float-end">
+                            <p class="card-text p-1">Status:{{ordem['status']}}</p>
+                        </div>
+
+                        <h6 class="card-subtitle">Previsão de Entrega</h6>
+                        <p>{{ordem['data_entrega']}}</p>
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -4,6 +4,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
+use helpers\Helpers;
+
 
 require __DIR__ . '/../vendor/autoload.php';
 define("_APP", dirname(__FILE__). "/../app");
@@ -15,9 +17,9 @@ $twig = Twig::create('../app/views', ['cache' => false]);
 
 $app->add(TwigMiddleware::create($app, $twig));
 
+
 require_once(_APP . "/Database/OrdServico.php");
 require_once(_APP . "/Controllers/Controller.php");
-require_once(_APP . "/helpers/helper.php");
+require_once(_APP . "/helpers/Helper.php");
 require_once(_APP . "/routes/route.php");
-
 ?>

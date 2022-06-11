@@ -1,0 +1,49 @@
+{{ include('index.html')}}
+
+<script src="../utils/login"></script>
+<div class="col py-3">
+    <div class="container mt-5">
+        <div class="row center">
+            <form name="cadastro">
+                <div class="row">
+                    <div class="mb-3 col-md-5 ">
+                        <label class="form-label">Ordem</label>
+                        <input class="form-control" type="text" maxlength="20" name="ordem" required/>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="mb-4 col-md-5">
+                        <label class="form-label">Previsão de entrega</label>
+                        <input class="form-control" type="date" name="data_entrega" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-5">
+                        <label class="form-label">Situação</label>
+                        <select class="form-control" name="status" required>
+                            <option value="">Selecione</option>
+                            <option value="A">Aberto</option>
+                            <option value="F">Pedido Fechado</option>
+                            <option value="C">Cancelado</option>
+                            <option value="E">Finalizado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-5" >
+                        <label class="form-label">Descrição da Ordem</label>
+                        <div class="form-floating" >
+                            <textarea class="form-control" name="descricao" placeholder="Leave a comment here" id="floatingTextarea" required></textarea>
+                            <label for="floatingTextarea" cols="10">Descreva...</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success" onclick="cadastrar()">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

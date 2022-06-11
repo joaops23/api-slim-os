@@ -13,7 +13,8 @@ class OS extends \PDO{
         return $this->pdo;
     }
 
-    public function inserir($dados = []){
+    public function inserir($dados){
+        $dados = json_decode($dados,true);
         // Verifica se foi enviado o campo "ordem", caso não gera um erro;
         $ordem = isset($dados['ordem']) ? trim($dados['ordem']) : throw new \exception("Ordem de serviço não encontrada");
 
@@ -45,10 +46,11 @@ class OS extends \PDO{
                 throw new \Exception("Não cadastrado, erro interno");
             }
         } else {
+            $id = 0;
             $message = "duplicate";
         }
         $return = ["message" => $message, "id" => $id];
-        return json_decode($return);
+        return json_encode($return);
     }
 
     public function alterar($table, $dados, $id){

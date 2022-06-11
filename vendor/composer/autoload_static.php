@@ -105,16 +105,6 @@ class ComposerStaticInit192fd08b39b1c5826ac947d87069db09
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'R' => 
-        array (
-            'Rain' => 
-            array (
-                0 => __DIR__ . '/..' . '/rain/raintpl/library',
-            ),
-        ),
-    );
-
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -130,7 +120,6 @@ class ComposerStaticInit192fd08b39b1c5826ac947d87069db09
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit192fd08b39b1c5826ac947d87069db09::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit192fd08b39b1c5826ac947d87069db09::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit192fd08b39b1c5826ac947d87069db09::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit192fd08b39b1c5826ac947d87069db09::$classMap;
 
         }, null, ClassLoader::class);
