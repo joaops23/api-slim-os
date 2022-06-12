@@ -5,11 +5,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Model\OS;
 use Slim\Views\Twig;
-use Helper\Helpers;
 
 $banco = new OS();
-
-$helper = new Helpers();
 
 require __DIR__ . '/../../vendor/autoload.php';
 
@@ -40,12 +37,22 @@ class Controller {
     
     public function inserir(Request $request, Response $response, $args): Response {
         global $banco;
-        $dados = $request->getBody()->getContents();
+        $body = $request->getBody()->getContents();
 
         $view = Twig::fromRequest($request);
-        $retorno = json_decode($banco->inserir($dados),true);
-        $request->getBody()->write($retorno);
-        return $helper->jsonResponse(true, $retorno['message'], $retorno);
+
+        // Tratando os dados recebidos pelo body e padronizando em um array json
+        $dado_brt = explode('&', $body);
+        $dados = array();
+        foreach($dado_brt as $dado){
+            $dado = explode("=",$dado);
+            $dados[$dado[0]] = $dado[1];
+        }
+        
+        $dados = json_encode($dados);
+        $retorno = $banco->inserir($dados);
+        $response->getBody()->write($retorno);
+        return $response;
     }
     
     

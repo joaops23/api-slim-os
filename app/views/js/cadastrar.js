@@ -25,8 +25,17 @@ function cadastrar(){
                     beforeSend: function(){
                         console.log("Enviando...");
                     },
-                    success: function(msg){
-                        console.log(msg)
+                    success: function(msg){                         
+                        
+                        let retorno = JSON.parse(msg)
+                        if(retorno.id != 0 || retorno.id != '0'){
+                            alert("Ordem de serviço cadastrada com sucesso!")
+                            window.location = window.location.protocol + "//" + window.location.host + "/" 
+                        }
+                        else{
+                            alert("Número de ordem de serviço já cadastrado, favor verificar!")
+                        }
+
                     }
                 })
 

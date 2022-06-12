@@ -22,10 +22,10 @@ $app->group('/ordens', function(RouteCollectorProxy $group){
 
 
 $app->group('/utils', function(RouteCollectorProxy $group){
-    $group->get('/login', function($request, $response, $args){
+    $group->get('/cadastrar', function($request, $response, $args){
         $view = Twig::fromRequest($request);
-        return $view->render($response, 'js/login.js');
-    })->setName("login.js");
+        return $view->render($response, 'js/cadastrar.js');
+    })->setName("cadastrar.js");
 });
 
 $app->run();

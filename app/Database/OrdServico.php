@@ -16,14 +16,15 @@ class OS extends \PDO{
     public function inserir($dados){
         $dados = json_decode($dados,true);
         // Verifica se foi enviado o campo "ordem", caso não gera um erro;
-        $ordem = isset($dados['ordem']) ? trim($dados['ordem']) : throw new \exception("Ordem de serviço não encontrada");
+        $ordem = isset($dados['ordem']) ? trim($dados['ordem']) : throw new \exception("Ordem de serviço não encontrada, {$dados}");
 
         
         $valida = $this->pdo->prepare("select id from ordens where ordem = '{$ordem}'");
         $valida->execute();
         $retorno = $valida->fetch(\PDO::FETCH_ASSOC);
         
-        if($retorno == false){
+        
+        if(!$retorno){
             //Caso não tenha encontrado uma ordem, o sistema irá incluir
             $this->pdo->beginTransaction();
             
